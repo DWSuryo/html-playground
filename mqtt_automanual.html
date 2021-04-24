@@ -52,7 +52,8 @@
         document.getElementById("status_test").innerHTML=tr_conv.trigger;
         txt_tr.innerHTML = msg.payloadString +"<br>"+ d + "<br>Number: "+count;
       }
-      if (status.innerHTML=="0" || status.innerHTML=="" || status.innerHTML==null){
+      if (status.innerHTML=="0" || status.innerHTML=="" ||
+          status.innerHTML==null ||status.innerHTML=="unclicked"){
         document.getElementById("mode_test").innerHTML="Auto";
         left.disabled=true;
         right.disabled=true;
@@ -65,8 +66,8 @@
           txt_auto.innerHTML = msg.payloadString +"<br>"+ d + "<br>Number: "+count;
         }
       }
-      else if (status.innerHTML=="1" ||status.innerHTML=="unclicked"){
-        document.getElementById("mode_test").innerHTML="<Manual>";
+      else if (status.innerHTML=="1" ){
+        document.getElementById("mode_test").innerHTML="Manual";
         left.disabled=false;
         right.disabled=false;
         if (msg.destinationName=="45856/test/manual"){
